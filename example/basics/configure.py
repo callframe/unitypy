@@ -9,6 +9,7 @@ from std.bins import get_rm
 from pathlib import Path
 
 PARENT_DIR = Path(__file__).parent
+MAKEFILE = PARENT_DIR / "Makefile"
 
 CONTEXT = Context()
 
@@ -90,5 +91,5 @@ if __name__ == "__main__":
         ),
     )
 
-with open("Makefile", "w") as f:
+with MAKEFILE.open("w") as f:
     CONTEXT.render(f)

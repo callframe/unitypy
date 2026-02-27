@@ -81,6 +81,9 @@ def ccompile_many_impl(context: Context, args: CCompileManyArgs) -> Info:
             ]
         )
 
+    if len(args.in_) != len(args.out):
+        raise ValueError("Input and output file lists must have the same length.")
+
     for in_file, out_file in zip(args.in_, args.out):
         cmd = build_command(in_file, out_file)
         rule = MakeRule(
