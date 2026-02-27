@@ -148,7 +148,7 @@ class RuleImpl(Protocol[RuleArgs, RuleInfo]):
 
 
 class RuleDescribeImpl(Protocol[RuleArgs]):
-    def describe(self, args: RuleArgs) -> str: ...
+    def __call__(self, args: RuleArgs) -> str: ...
 
 
 @dataclass
