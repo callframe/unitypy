@@ -41,7 +41,7 @@ def archive_impl(context: Context, args: ArchiveArgs) -> ArchiveInfo:
 
 
 def archive_impl_describe(args: ArchiveArgs) -> str:
-    return f"Archiving {args.in_} into {args.out} with {args.ar}"
+    return f"Generating archiving rule for {args.in_} to {args.out}"
 
 
 archive = Rule(impl=archive_impl, describe_impl=archive_impl_describe)
@@ -63,7 +63,7 @@ def clean_impl(context: Context, args: CleanArgs) -> Info:
 
 
 def clean_impl_describe(args: CleanArgs) -> str:
-    return f"Cleaning files {args.files} with {args.rm} and flags {args.rmflags}"
+    return f"Generating clean rule for {len(args.files)} files"
 
 
 clean = Rule(impl=clean_impl, describe_impl=clean_impl_describe)

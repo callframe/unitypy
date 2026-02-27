@@ -52,7 +52,7 @@ def ccompile_impl(context: Context, args: CCompileArgs) -> Info:
 
 
 def ccompile_impl_describe(args: CCompileArgs) -> str:
-    return f"Compiling {args.in_} to {args.out} with {args.cc} and flags {args.cflags}"
+    return f"Generating C-compile rules for {args.in_} to {args.out}"
 
 
 ccompile = Rule(impl=ccompile_impl, describe_impl=ccompile_impl_describe)
@@ -96,7 +96,7 @@ def ccompile_many_impl(context: Context, args: CCompileManyArgs) -> Info:
 
 
 def ccompile_many_impl_describe(args: CCompileManyArgs) -> str:
-    return f"Compiling {args.in_} to {args.out} with {args.cc} and flags {args.cflags}"
+    return f"Generating C-compile rules for {len(args.in_)} files"
 
 
 ccompile_many = Rule(
