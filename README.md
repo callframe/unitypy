@@ -9,7 +9,7 @@ Quick Start
 -----------
 
 Create a configure.py file that defines your build rules:
-
+```python
   from makepy import Context
   from std.cc import ccompile, CCompileArgs
 
@@ -32,6 +32,7 @@ Create a configure.py file that defines your build rules:
 
   with open("Makefile", "w") as f:
       CONTEXT.render(f)
+```
 
 Run the configuration script to generate the Makefile:
 
