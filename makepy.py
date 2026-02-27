@@ -96,7 +96,7 @@ RuleInfo = TypeVar("RuleInfo", bound=Info)
 
 @dataclass
 class DefaultInfo(Info):
-    files: Sequence[str] = None
+    files: Sequence[str] = ()
 
 
 class Context:
